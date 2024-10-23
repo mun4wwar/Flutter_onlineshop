@@ -24,16 +24,16 @@ class _AllProductState extends State<AllProduct> {
           await http.post(Uri.parse(urlDeleteProduct), body: {"id": id});
       var deleteDataProduct = jsonDecode(responseDelete.body);
       if (deleteDataProduct["success"] == "true") {
-        print("Product successfully deleted");
+        ("Product successfully deleted");
         // Remove the product from the list and update the state
         setState(() {
           productList.removeWhere((product) => product["id"] == id);
         });
       } else {
-        print("Product failed to delete");
+        ("Product failed to delete");
       }
     } catch (exc) {
-      print(exc);
+      (exc);
     }
   }
 
